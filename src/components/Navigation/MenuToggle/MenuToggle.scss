@@ -1,0 +1,33 @@
+@import "../../../sass/variables";
+
+.MenuToggle{
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 100;
+
+  transition: opacity, left .22s ease-in;
+
+
+  &__icon{
+    color: $whiteColor;
+    font-size: 20px;
+  }
+
+  &:hover{
+    opacity: .7;
+  }
+
+  &.open{
+    left: 320px;
+  }
+
+  &:focus,:active{
+    outline: none;
+  }
+}

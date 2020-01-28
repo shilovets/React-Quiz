@@ -1,0 +1,46 @@
+@import "./../../../sass/variables";
+
+.Drawer{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 80%;
+  max-width: 300px;
+  background: $whiteColor;
+  padding: 20px 10px;
+  box-sizing: border-box;
+
+  transform: translateX(0px);
+  transition: transform .22s ease-in;
+  z-index: 90;
+
+  &.close{
+    transform: translateX(-300px);
+  }
+
+  & ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & ul li{
+    margin-bottom: 15px;
+  }
+
+  &__links{
+    color: $darkBlueLinks;
+    background-coloe: $whiteColor;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 0 20px 10px 20px;
+
+    position: relative;
+    transition: opacity .3s;
+  }
+  &__links:hover, .active{
+    opacity: .7;
+  }
+}

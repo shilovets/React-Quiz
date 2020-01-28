@@ -1,0 +1,16 @@
+@import "../../sass/variables";
+
+.ActiveQuiz{
+  color: $whiteColor;
+  border: 2px solid $whiteColor;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  margin: 0 10px;
+  padding: 20px;
+
+  &__question{
+    display: flex;
+    justify-content: space-between;
+  }
+}

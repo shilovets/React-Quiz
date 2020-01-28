@@ -1,0 +1,29 @@
+@import "../../sass/variables";
+
+.FinishedQuiz {
+  margin: 0 10px;
+  padding: 20px;
+
+  color: $whiteColor;
+  border: 2px solid $whiteColor;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  & ul {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+  }
+
+  & .success{
+    margin-left: 15px;
+    color: $bgdSuccess;
+  }
+
+  & .error{
+    margin-left: 15px;
+    color: $bgdError;
+  }
+}
+

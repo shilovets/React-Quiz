@@ -1,0 +1,24 @@
+@import "../../../../sass/variables";
+
+.AnswerItem{
+  border: 1px solid $whiteColor;
+  border-radius: 5px;
+  cursor: pointer;
+
+  padding: 5px 10px;
+  margin-bottom: 5px;
+
+  &:hover{
+    background: $bgdGray;
+    transition: background .3s ease-in-out;
+  }
+
+  &.success{
+    background: $bgdSuccess;
+
+  }
+
+  &.error{
+  background: $bgdError;
+  }
+}
