@@ -97,7 +97,8 @@ class Quiz extends Component {
             activeQuestion: 0,
             isFinished: false
         })
-    }
+    };
+
 
     render() {
         return (

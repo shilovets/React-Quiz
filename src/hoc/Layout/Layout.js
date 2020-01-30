@@ -25,11 +25,17 @@ class Layout extends Component {
                     isOpen={this.state.menu}
                     onClose={this.toggleMenuHandler}
                 />
+                {
+                    !this.state.menu
+                        ?
+                        <MenuToggle
+                            isOpen={this.state.menu}
+                            onToggle={this.toggleMenuHandler}
+                        />
+                        :
+                        null
+                }
 
-                <MenuToggle
-                    isOpen={this.state.menu}
-                    onToggle={this.toggleMenuHandler}
-                />
 
                 <main>
                     {this.props.children}

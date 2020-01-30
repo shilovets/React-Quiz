@@ -1,0 +1,34 @@
+@import "../../sass/variables";
+
+.QuizList{
+  display: flex;flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+
+  width: 100%;
+  background: linear-gradient(90deg, $quizListFirstGradient 0%, $quizListSecondGradient 37%, $quizListThirdGradient 100%);
+  padding-top: 100px;
+
+  h1{
+    color: $whiteColor;
+  }
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li{
+      margin-bottom: 10px;
+
+      a{
+        text-decoration: none;
+        color: $whiteColor;
+      }
+      a:hover{
+        color: $darkBlueLinks;
+      }
+    }
+  }
+
+}

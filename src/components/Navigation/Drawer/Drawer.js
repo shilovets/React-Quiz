@@ -1,11 +1,14 @@
 import React, {Component} from "react";
+import {NavLink} from "react-router-dom";
 
 import "./Drawer.scss";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
 const links = [
-    1, 2, 3
-]
+    {to: '/', label: 'Список тестов', exact: true},
+    {to: '/auth', label: 'Авторизация', exact: false},
+    {to: '/quiz-creator', label: 'Создать тест', exact: false}
+];
 
 class Drawer extends Component {
 
@@ -15,13 +18,18 @@ class Drawer extends Component {
                 <li
                     key={index}
                 >
-                    <a href="#" className='Drawer__links'>
-                        Link {link}
-                    </a>
+                    <NavLink
+                        to={link.to}
+                        exact={link.exact}
+                        className='Drawer__links'
+                        onClick={this.props.onClose}
+                    >
+                        {link.label}
+                    </NavLink>
                 </li>
             )
 
-        }))
+        }));
     }
 
     render() {
