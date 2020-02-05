@@ -1,0 +1,45 @@
+@import "../../sass/variables";
+
+.Auth {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+  background: linear-gradient(270deg, $authFirstGradient 0%, $authSecondGradient 100%);
+  width: 100%;
+
+  & .primaryBtn{
+    color: $authSecondGradient;
+    border: 1px solid $authSecondGradient;
+  }
+
+  & .successBtn{
+    background: $authSecondGradient;
+  }
+
+  > div {
+    width: 100%;
+    max-width: 300px;
+    padding: 0 20px;
+  }
+
+  h1{
+    color: $whiteColor;
+    text-align: center;
+  }
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 260px;
+
+    background: $whiteColor;
+    box-shadow: 2px 2px 2px rgba($blackColor, .5);
+    padding: 20px;
+    border-radius: 5px;
+
+  }
+}

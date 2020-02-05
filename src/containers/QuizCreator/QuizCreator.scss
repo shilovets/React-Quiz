@@ -1,0 +1,41 @@
+@import "../../sass/variables";
+
+.QuizCreator{
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+  width: 100%;
+  background: linear-gradient(270deg, $createTestFirstGradient 0%, $createTestSecondGradient 100%);
+
+  >div{
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  form{
+    background: $whiteColor;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 2px 2px 2px rgba($blackColor, .5);
+  }
+
+  & .primaryBtn{
+    color: $createTestSecondGradient;
+    border: 1px solid $createTestSecondGradient;
+  }
+
+  & .successBtn{
+    background: $createTestSecondGradient;
+  }
+
+  &_btnBox {
+    display: flex;
+    flex-direction: column;
+  }
+}

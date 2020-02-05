@@ -5,9 +5,9 @@ import "./Drawer.scss";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 
 const links = [
-    {to: '/', label: 'Список тестов', exact: true},
-    {to: '/auth', label: 'Авторизация', exact: false},
-    {to: '/quiz-creator', label: 'Создать тест', exact: false}
+    {to: '/', label: 'Quiz list', exact: true},
+    {to: '/auth', label: 'Authorization', exact: false},
+    {to: '/quiz-creator', label: 'Create new quiz', exact: false}
 ];
 
 class Drawer extends Component {

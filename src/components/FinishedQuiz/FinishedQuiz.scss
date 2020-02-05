@@ -25,5 +25,18 @@
     margin-left: 15px;
     color: $bgdError;
   }
+
+  & .successBtn{
+    margin-left: 15px;
+    background: $whiteColor;
+    color: $bgdGradientFrom;
+  }
+
+  & .primaryBtn{
+    border: 1px solid $whiteColor;
+    background: none;
+    color: $whiteColor;
+  }
 }
+
 

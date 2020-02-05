@@ -3,7 +3,8 @@
 .Button{
   display: inline-block;
   padding: 10px 20px;
-  margin-right: 15px;
+  margin-top: 10px;
+  min-width: 100px;
 
   color: $blackColor;
   border: 1px solid $whiteColor;
@@ -24,8 +25,7 @@
   }
 
   &:disabled{
-    background: $whiteColor;
-    color: $blackColor;
+    opacity: .5;
     cursor: not-allowed;
   }
 
