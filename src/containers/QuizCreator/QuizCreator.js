@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from "../../axios/axios-quiz";
 
 import "./QuizCreator.scss";
 import Button from "../../components/UI/Button/Button";
@@ -57,8 +58,33 @@ class QuizCreator extends Component {
 
     };
 
-    createQuizHandler = () => {
-        
+    createQuizHandler = async event => {
+        event.preventDefault();
+
+        try {
+            await axios.post('quizes.json', this.state.quiz);
+
+            this.setState({
+                quiz: [],
+                isFormValid: false,
+                rightAnswerId: 1,
+                formControl: createFormControls()
+            })
+        } catch (e) {
+            console.log(e);
+        }
+
+
+        // axios.post('https://react-quiz-39ce9.firebaseio.com/quizes.json', this.state.quiz)
+        //     .then((response)=>{
+        //         console.log(response);
+        //     })
+        //     .catch((error)=>{
+        //         console.log(error);
+        //     })
+        //
+        // console.log(this.state.quiz);
+
     };
 
     addQuestionHandler = () => {

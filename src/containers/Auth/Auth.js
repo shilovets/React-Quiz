@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from "axios";
 
 import "./Auth.scss";
 import Button from "../../components/UI/Button/Button";
@@ -37,12 +38,37 @@ class Auth extends Component {
         }
     };
 
-    loginHandler = () => {
+    signInHandler = async () => {
+        const authData = {
+            email: this.state.formControl.email.value,
+            password: this.state.formControl.password.value,
+            returnSecureToken: true
+        };
+
+        try {
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAHuQ6wNS11YWBetbLxg3UCAErTW29TThM', authData);
+            console.log(response);
+
+        } catch (e) {
+            console.log(e);
+        }
 
     };
 
-    signUpHandler = () => {
+    signUpHandler = async () => {
 
+        const authData = {
+            email: this.state.formControl.email.value,
+            password: this.state.formControl.password.value,
+            returnSecureToken: true
+        };
+
+        try{
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAHuQ6wNS11YWBetbLxg3UCAErTW29TThM', authData);
+            console.log(response.data);
+        }catch (e) {
+            console.log(e);
+        }
     };
 
     submitHandler = event => {
@@ -99,17 +125,17 @@ class Auth extends Component {
 
                         <Button
                             type="successBtn"
-                            onClick={this.loginHandler}
+                            onClick={this.signInHandler}
                             disabled={!this.state.isFormValid}
                         >
-                            Login
+                            Sign In
                         </Button>
                         <Button
                             type="primaryBtn"
                             onClick={this.signUpHandler}
                             disabled={!this.state.isFormValid}
                         >
-                            Sign up
+                            Sign Up
                         </Button>
                     </form>
                 </div>
