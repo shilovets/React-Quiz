@@ -19,7 +19,7 @@ const ActiveQuiz = props => (
             state={props.state}
         />
     </div>
-)
+);
 
 
 export default ActiveQuiz;

@@ -8,7 +8,7 @@ export function createControl(config, validation) {
         touched: false,
         value: ''
     };
-};
+}
 
 export function validate(value, validation) {
     if (!validation) {
@@ -21,17 +21,17 @@ export function validate(value, validation) {
         isValid = value.trim() !== '' && isValid;
     }
 
-    if(validation.email){
+    if (validation.email) {
         isValid = is.email(value) && isValid;
 
     }
 
-    if(validation.minLength){
+    if (validation.minLength) {
         isValid = value.length >= validation.minLength && isValid;
     }
 
     return isValid;
-};
+}
 
 export function validateForm(formControl) {
     let isFormValid = true;
@@ -41,4 +41,4 @@ export function validateForm(formControl) {
     });
 
     return isFormValid;
-};
+}

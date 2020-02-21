@@ -22,8 +22,8 @@ const MenuToggle = props => {
             </i>
         </button>
 
-    )
-}
+    );
+};
 export default MenuToggle;
 
 //

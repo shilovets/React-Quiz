@@ -1,10 +1,15 @@
 import React, {Component} from "react";
-import axios from "axios";
+import connect from "react-redux/es/connect/connect";
 
-import "./Auth.scss";
+import {validate, validateForm} from "../../form/formFramework";
+import {auth} from "../../store/actions/auth";
+
 import Button from "../../components/UI/Button/Button";
 import Input from "../../components/UI/Input/Input";
-import {validate, validateForm} from "../../form/formFramework";
+
+
+import "./Auth.scss";
+
 
 class Auth extends Component {
 
@@ -39,36 +44,19 @@ class Auth extends Component {
     };
 
     signInHandler = async () => {
-        const authData = {
-            email: this.state.formControl.email.value,
-            password: this.state.formControl.password.value,
-            returnSecureToken: true
-        };
-
-        try {
-            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAHuQ6wNS11YWBetbLxg3UCAErTW29TThM', authData);
-            console.log(response);
-
-        } catch (e) {
-            console.log(e);
-        }
-
+        this.props.auth(
+            this.state.formControl.email.value,
+            this.state.formControl.password.value,
+            true
+        );
     };
 
     signUpHandler = async () => {
-
-        const authData = {
-            email: this.state.formControl.email.value,
-            password: this.state.formControl.password.value,
-            returnSecureToken: true
-        };
-
-        try{
-            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAHuQ6wNS11YWBetbLxg3UCAErTW29TThM', authData);
-            console.log(response.data);
-        }catch (e) {
-            console.log(e);
-        }
+        this.props.auth(
+            this.state.formControl.email.value,
+            this.state.formControl.password.value,
+            false
+        );
     };
 
     submitHandler = event => {
@@ -142,6 +130,16 @@ class Auth extends Component {
             </div>
         )
     };
-};
+}
 
-export default Auth;
+// function mapStateToProps(state) {
+//     return {};
+// }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        auth: (email, password, isLogin) => dispatch(auth(email, password, isLogin))
+    };
+}
+
+export default connect(null, mapDispatchToProps)(Auth);

@@ -5,13 +5,13 @@ import {Link} from "react-router-dom";
 import "./FinishedQuiz.scss";
 
 const FinishedQuiz = props => {
-    const successCount = Object.keys(props.results).reduce((total,key)=>{
-            if(props.results[key]==='success'){
+    const successCount = Object.keys(props.results).reduce((total, key) => {
+            if (props.results[key] === 'success') {
                 total++;
             }
             return total;
         }
-    ,0)
+        , 0);
 
     return (
         <div className='FinishedQuiz'>
@@ -21,7 +21,7 @@ const FinishedQuiz = props => {
                     const cls = [
                         'fa',
                         props.results[quizItem.id] === 'error' ? 'fa-times error' : 'fa-check success'
-                    ]
+                    ];
 
                     return (
                         <li
@@ -33,7 +33,7 @@ const FinishedQuiz = props => {
                             <i className={cls.join(' ')}></i>
                         </li>
                     )
-                    })
+                })
                 }
 
             </ul>
@@ -52,6 +52,6 @@ const FinishedQuiz = props => {
             </div>
         </div>
     )
-}
+};
 
 export default FinishedQuiz;
